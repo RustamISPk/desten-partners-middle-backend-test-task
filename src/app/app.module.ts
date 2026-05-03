@@ -4,6 +4,7 @@ import { UsersModule } from './modules/user/users.module';
 import { DatabaseModule } from '../database/database.module';
 import { MortgageCreateModule } from './modules/mortgage-create/mortgage-create.module';
 import { MortgageCalculateModule } from './modules/mortgage-calculate/mortgage-calculate.module';
+import { RedisModule } from '../redis/redis.module';
 
 @Module({
   imports: [
@@ -14,7 +15,8 @@ import { MortgageCalculateModule } from './modules/mortgage-calculate/mortgage-c
     DatabaseModule,
     UsersModule,
     MortgageCreateModule,
-    MortgageCalculateModule
+    MortgageCalculateModule,
+    RedisModule
   ]
 })
 export class AppModule {}
