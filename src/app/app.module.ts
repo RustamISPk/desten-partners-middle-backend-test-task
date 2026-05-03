@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { UsersModule } from './modules/user/users.module';
 import { DatabaseModule } from '../database/database.module';
+import { MortgageCreateModule } from './modules/mortgage-create/mortgage-create.module';
 
 @Module({
   imports: [
@@ -11,6 +12,7 @@ import { DatabaseModule } from '../database/database.module';
     }),
     DatabaseModule,
     UsersModule,
-  ],
+    MortgageCreateModule
+  ]
 })
-export class AppModule { }
+export class AppModule {}
