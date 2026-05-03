@@ -3,6 +3,7 @@ import { ConfigModule } from '@nestjs/config';
 import { UsersModule } from './modules/user/users.module';
 import { DatabaseModule } from '../database/database.module';
 import { MortgageCreateModule } from './modules/mortgage-create/mortgage-create.module';
+import { MortgageCalculateModule } from './modules/mortgage-calculate/mortgage-calculate.module';
 
 @Module({
   imports: [
@@ -12,7 +13,8 @@ import { MortgageCreateModule } from './modules/mortgage-create/mortgage-create.
     }),
     DatabaseModule,
     UsersModule,
-    MortgageCreateModule
+    MortgageCreateModule,
+    MortgageCalculateModule
   ]
 })
 export class AppModule {}
