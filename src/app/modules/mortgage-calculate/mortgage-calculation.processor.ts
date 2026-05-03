@@ -83,9 +83,6 @@ export class MortgageCalculateProcessor extends WorkerHost {
         recommendedIncome: recommendedIncome,
         mortgagePaymentSchedule
       };
-      console.log('|calculation');
-      console.log(calculation);
-      console.log('calculation');
       const recordId = await this.db
         .insert(mortgageCalculation)
         .values({
@@ -100,9 +97,6 @@ export class MortgageCalculateProcessor extends WorkerHost {
           paymentSchedule: JSON.stringify(calculation.mortgagePaymentSchedule)
         })
         .$returningId();
-      console.log('|recordId');
-      console.log(recordId);
-      console.log('recordId');
       await this.redis.set(
         recordId[0].id.toString(),
         JSON.stringify(calculation)
